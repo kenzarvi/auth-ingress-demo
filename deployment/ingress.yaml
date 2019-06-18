@@ -1,0 +1,17 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-world
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/auth-url: http://auth-service.default.svc.cluster.local/
+spec:
+  rules:
+    - host: hello-world.example.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: hello-world
+              servicePort: 80
