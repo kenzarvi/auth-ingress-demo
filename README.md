@@ -43,3 +43,9 @@ This request gets past the auth server!
 ```
 curl -H 'Authorization: Bearer sometoken' http://hello-world.example.com
 ```
+
+The `/public` resource does not need authentication however:
+
+```
+curl http://hello-world.example.com/public
+```
